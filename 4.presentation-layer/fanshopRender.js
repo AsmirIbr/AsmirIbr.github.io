@@ -50,6 +50,18 @@ function RenderFanshop() {
         this.renderMatchKits(fanshopData, $itemsHolder);
         this.renderAccessories(fanshopData, $itemsHolder);
         this.renderGifts(fanshopData, $itemsHolder);
+
+        $(".item-holder").on("click", ".item>button", (event) => {
+            var itemId = $(event.target).parent()[0].id;
+
+                $(event.target).parent()[0].attributes[2].nodeValue = true;
+                var addedToCart = this.fanshopPageData.postCartItems(fanshopData.all, itemId);
+
+                if(addedToCart === true){
+                    // $("<div>").appendTo(".input").addClass("cart-point")
+                    $(event.target).text("Added to cart");
+                }
+        })
         
     }
 
@@ -59,19 +71,7 @@ function RenderFanshop() {
             .append($("<img>").attr("src", fanshopData.matchKits[i].image))
             .append($("<h4>").text(fanshopData.matchKits[i].name))
             .append($("<h3>").text("€" + fanshopData.matchKits[i].price))
-            .append($("<button>").text("Add to cart")
-            .on("click", (event) => {
-
-                var itemId = $(event.target).parent()[0].id;
-
-                $(event.target).parent()[0].attributes[2].nodeValue = true;
-                var addedToCart = this.fanshopPageData.postCartItems(fanshopData.all, itemId);
-
-                if(addedToCart === true){
-                    // $("<div>").appendTo(".input").addClass("cart-point")
-                    $(event.target).text("Added to cart");
-                }
-            }));
+            .append($("<button>").text("Add to cart"));
         }
     }
 
@@ -81,20 +81,7 @@ function RenderFanshop() {
             .append($("<img>").attr("src", fanshopData.accessories[i].image))
             .append($("<h4>").text(fanshopData.accessories[i].name))
             .append($("<h3>").text("€" + fanshopData.accessories[i].price))
-            .append($("<button>").text("Add to cart")
-            .on("click", (event) => {
-                var itemId = $(event.target).parent()[0].id;
-
-                $(event.target).parent()[0].attributes[2].nodeValue = true;
-                var addedToCart = this.fanshopPageData.postCartItems(fanshopData.matchKits, itemId);
-
-                if(addedToCart === true){
-                    // $("<div>").appendTo(".input").addClass("cart-point")
-                    $(event.target).text("Added to cart")
-                }
-                
-                
-            }));
+            .append($("<button>").text("Add to cart"));
         }
     }
 
@@ -104,18 +91,7 @@ function RenderFanshop() {
             .append($("<img>").attr("src", fanshopData.gift[i].image))
             .append($("<h4>").text(fanshopData.gift[i].name))
             .append($("<h3>").text("€" + fanshopData.gift[i].price))
-            .append($("<button>").text("Add to cart")
-            .on("click", (event) => {
-                var itemId = $(event.target).parent()[0].id;
-
-                $(event.target).parent()[0].attributes[2].nodeValue = true;
-                var addedToCart = this.fanshopPageData.postCartItems(fanshopData.matchKits, itemId);
-
-                if(addedToCart === true){
-                    // $("<div>").appendTo(".input").addClass("cart-point")
-                    $(event.target).text("Added to cart")
-                }
-            }));
+            .append($("<button>").text("Add to cart"));
         }
     }
 }
