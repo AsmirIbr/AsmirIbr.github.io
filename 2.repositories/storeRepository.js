@@ -1,6 +1,6 @@
 function StoreRepository() {
 
-    this.cart = ["ghf"];
+    window.cart = [];
 
     this.getItems = function () {
 
@@ -21,13 +21,13 @@ function StoreRepository() {
         accessories.push(new Item("inter-stripes-scarf", "INTER VERTICAL STRIPES SCARF CACHEMIRE", "119", "store/accessories/stripesScarf.jpg"));
 
         var gift = [];
-        gift.push(new Item("inter-calender-set", "INTER 2019 CALENDER SET", "14.90", "store/gift/interCalendar.jpg"));
-        gift.push(new Item("inter-pen", "INTER PEN", "9.90", "store/gift/interPen.jpg"));
+        gift.push(new Item("inter-calender-set", "INTER 2019 CALENDER SET", "14", "store/gift/interCalendar.jpg"));
+        gift.push(new Item("inter-pen", "INTER PEN", "9", "store/gift/interPen.jpg"));
         gift.push(new Item("inter-talent-watch", "INTER BLACK TALENT WATCH", "95", "store/gift/talentWatch.jpg"));
-        gift.push(new Item("inter-black-blue-watch", "INTER BLACK AND BLUE WATCH - UNISEX", "32.90", "store/gift/unisexWatch.jpg"));
+        gift.push(new Item("inter-black-blue-watch", "INTER BLACK AND BLUE WATCH - UNISEX", "32", "store/gift/unisexWatch.jpg"));
         gift.push(new Item("inter-110years-pin", "INTER 110 YEARS PIN", "13.50", "store/gift/110yearsPin.jpg"));
         gift.push(new Item("inter-biscone-mug", "INTER BISCIONE PLASTIC MUG", "12.00", "store/gift/plasticMug.jpg"));
-        gift.push(new Item("inter-home-minikit", "INTER HOME MINIKIT WITH SUCKER", "9.90", "store/gift/homeMinikit.jpg"));
+        gift.push(new Item("inter-home-minikit", "INTER HOME MINIKIT WITH SUCKER", "9", "store/gift/homeMinikit.jpg"));
 
         var all = matchKits.concat(accessories).concat(gift);
 
@@ -42,13 +42,12 @@ function StoreRepository() {
     }
 
     this.postItemForCart = (itemId) => {
-        this.cart.push(itemId);
-        console.log("post repo", this.cart);
-        return this.cart;
+        window.cart.push(itemId);     
+        return window.cart;
     }
 
-    this.getItemsForCart = () => {
-        console.log("get repo", this.cart);
-        return this.cart;
+    this.removeItemForCart = (itemIndex) => {
+      window.cart.splice(itemIndex, 1);
+      return window.cart;
     }
 }

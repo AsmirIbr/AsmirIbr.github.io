@@ -16,17 +16,18 @@ function LoginFormRender() {
 
         $("<div>").appendTo($logInDiv).addClass("close-logIn")
             .append($("<h6>").text("Maybe later"))
-            .append($("<i>").addClass("fas").addClass("fa-times").on("click", (event) => {
-                $($popUpLogIn).fadeOut("slow");
+            .append($("<i>").addClass("fas").addClass("fa-times")
+                .on("click", (event) => {
+                    $($popUpLogIn).fadeOut("slow");
 
-                $("body").css("overflow", "scroll")
+                    $("body").css("overflow", "scroll")
 
-                setTimeout(function () {
-                    $("#tilt").appendTo(".bottom-bar").empty().removeClass("image-holder");
-                    $($popUpLogIn).remove();
-                }, 500);
+                    setTimeout(function () {
+                        $("#tilt").appendTo(".bottom-bar").empty().removeClass("image-holder");
+                        $($popUpLogIn).remove();
+                    }, 500);
 
-            }));
+                }));
 
 
         $("<h3>").appendTo($loginForm).text("Member login");
@@ -39,7 +40,7 @@ function LoginFormRender() {
         $("<div>").appendTo($loginForm).addClass("input-div").attr("id", "pass-error-login")
             .append($("<span>").addClass("forgot-pass")
                 .append($("<a>").addClass("forgot-pass-text").text("forgot?")
-                    .on("click",  (event) => {
+                    .on("click", (event) => {
                         $(".login-holder").css("display", "none");
 
                         var $resetHolder = $("<div>").appendTo($logInDiv).fadeIn("slow").addClass("register-holder");
@@ -56,7 +57,7 @@ function LoginFormRender() {
 
                         $("<div>").appendTo($loginForm).addClass("input-div")
                             .append($("<input>").attr("type", "submit").attr("value", "Reset password").addClass("input-button")
-                                .on("click",  (event) => {
+                                .on("click", (event) => {
 
                                     if (($("#forgot-email").val().indexOf("@") === -1)) {
 
@@ -73,7 +74,7 @@ function LoginFormRender() {
                                         var email = $("#forgot-email").val();
 
                                         var userResetPass = this.pageData.resetPassword(email);
-                                        
+
 
                                         if (userResetPass === true) {
                                             $($resetHolder).remove();
@@ -95,7 +96,7 @@ function LoginFormRender() {
 
                                                 $("<div>").appendTo($loginForm).addClass("input-div")
                                                     .append($("<input>").attr("type", "submit").attr("value", "Submit new password").addClass("input-button")
-                                                        .on("click",  (event) => {
+                                                        .on("click", (event) => {
 
                                                             if ($("#reset-pass").val().length < 8) {
 
@@ -109,15 +110,15 @@ function LoginFormRender() {
 
                                                                 var $waiting = $("<div>").appendTo($logInDiv).fadeIn("slow").addClass("register-holder")
                                                                     .append($("<img>").attr("src", "loader/football_1000.gif").addClass("loader-reg"))
-                                        
+
                                                                 var newPass = $("#reset-pass").val();
-                                        
+
                                                                 var userNewPass = this.pageData.postNewPassword(newPass, email);
-                                        
-                                        
+
+
                                                                 if (userNewPass === false) {
                                                                     $(".login-holder").css("display", "none");
-                                        
+
                                                                     setTimeout(() => {
                                                                         $($waiting).empty().append($("<div>").addClass("success-reg")
                                                                             .append($("<h4>").text("Something got wrong. Please  ")
@@ -127,7 +128,7 @@ function LoginFormRender() {
                                                                                 }))));
                                                                     }, 3000);
                                                                 } else {
-                                        
+
                                                                     $($resetHolder).remove();
 
                                                                     setTimeout(() => {
@@ -150,7 +151,7 @@ function LoginFormRender() {
                                                 $($waiting).empty().append($("<div>").addClass("success-reg")
                                                     .append($("<h4>").text("The email you entered is incorrect. Please  ")
                                                         .append($("<a>").text("try again").on("click", (event) => {
-                                                         
+
 
                                                             $(event.target).parent().parent().parent().remove();
                                                             $($resetHolder).css("display", "flex");
@@ -160,7 +161,7 @@ function LoginFormRender() {
                                     }
 
                                 }));
-                  
+
                     })))
 
             .append($("<input>").attr("type", "password").attr("id", "login-pass").attr("placeholder", "Password").addClass("input"))
@@ -170,7 +171,7 @@ function LoginFormRender() {
 
         $("<div>").appendTo($loginForm).addClass("input-div")
             .append($("<input>").attr("type", "submit").attr("value", "Let me in").addClass("input-button")
-                .on("click",  (event) => {
+                .on("click", (event) => {
 
                     if (($("#login-email").val().indexOf("@") === -1) || ($("#login-pass").val().length < 8)) {
 
@@ -219,7 +220,7 @@ function LoginFormRender() {
                                 $($popUpLogIn).fadeOut("slow");
                                 $("body").css("overflow", "scroll")
 
-                                setTimeout( () => {
+                                setTimeout(() => {
                                     $("#tilt").appendTo(".bottom-bar").empty().removeClass("image-holder");
                                     $($popUpLogIn).remove();
 
@@ -227,18 +228,18 @@ function LoginFormRender() {
                                         .append($("<img>").attr("src", "logo/user-logo.png").addClass("user-img"))
                                         .append($("<h6>").text(userGet).addClass("user-name"))
                                         .append($("<i>").addClass("fas").addClass("fa-sign-out-alt").addClass("logOut")
-                                        .on("click", (event) => {
-                                            $("#icon-login-header").empty().removeClass("user-header-holder").addClass("bla1")
-                                            .append($("<i>").addClass("fas").attr("id", "logIn").addClass("fa-user-alt").addClass("log-in").removeClass("user-header-holder")
                                             .on("click", (event) => {
-                                    
-                                                $("body").css("overflow", "hidden");
-                                            
-                                                this.renderForm();
-                                            }))
-                                    
-                                            .append($("<p>").text("My account"))
-                                        }));
+                                                $("#icon-login-header").empty().removeClass("user-header-holder").addClass("bla1")
+                                                    .append($("<i>").addClass("fas").attr("id", "logIn").addClass("fa-user-alt").addClass("log-in").removeClass("user-header-holder")
+                                                        .on("click", (event) => {
+
+                                                            $("body").css("overflow", "hidden");
+
+                                                            this.renderForm();
+                                                        }))
+
+                                                    .append($("<p>").text("My account"))
+                                            }));
 
                                 }, 500);
                             }, 3000);

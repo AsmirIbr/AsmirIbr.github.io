@@ -22,8 +22,6 @@ function RenderFanshop() {
 
         .append($("<button>").attr("id", "select-categories").text("Select")
         .on("click", (event) => {
-            
-            // $($itemsHolder).empty();
 
             var value = $("#categories").val();
             if(value === "all-categories"){
@@ -58,7 +56,7 @@ function RenderFanshop() {
                 var addedToCart = this.fanshopPageData.postCartItems(fanshopData.all, itemId);
 
                 if(addedToCart === true){
-                    // $("<div>").appendTo(".input").addClass("cart-point")
+                    $(".fa-shopping-cart").addClass("cart-has-item");
                     $(event.target).text("Added to cart");
                 }
         })

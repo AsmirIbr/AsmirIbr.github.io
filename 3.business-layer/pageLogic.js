@@ -108,8 +108,7 @@ function PageLogic() {
                                 if (!fanshopData[index].isCart === true) {
 
                                         fanshopData[index].isCart = true;
-                                        var cart = this.storeRepo.postItemForCart(fanshopData[index]);
-                                        console.log("logic post", cart);                            
+                                        this.storeRepo.postItemForCart(fanshopData[index]);                         
                                 }
                         }
                 }
@@ -117,14 +116,19 @@ function PageLogic() {
                 return true;
         }
 
-        this.getCartItems = function () {
-
-                var cartItems = this.storeRepo.getItemsForCart();
-                console.log("logic get", cartItems);
+        this.removeCartItem = function (itemId) {
                 
-                return cartItems;
-        }
+                for (let index = 0; index < window.cart.length; index++) {
 
+                        if (window.cart[index].id === itemId) {
+
+                                window.cart[index].isCart = false;
+                                this.storeRepo.removeItemForCart(index);                           
+                        }
+                }
+
+                return true;
+        }
 }
 
 

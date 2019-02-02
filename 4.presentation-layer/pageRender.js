@@ -74,7 +74,26 @@ function RenderPage() {
         $("#search-button").on("click", function () {
 
             var $search = $("<div>").appendTo("#bottom-bar").addClass("search-bar").animate({ width: '100%' }, "slow");
-            $("<input>").attr("type", "text").attr("placeholder", "Type to search").appendTo($search).addClass("search-input").delay(500).animate({ width: '80%' }, "slow");
+            $("<input>").attr("type", "text").attr("placeholder", "Type to search").appendTo($search).addClass("search-input").delay(500).animate({ width: '80%' }, "slow")
+            .on("keypress", async () => {
+
+            
+                var input1 = $(".search-input").val()
+                var result = null;
+                try {
+                    var url = await fetch('http://en.wikipedia.org/w/api.php?&action=query&list=search&srsearch='+ input1 + 
+                    '+incategory:Men%27s_sport_in_Europe&format=json&srlimit=5&prop=info'); // za statistika
+                    var response = await url;
+                    result = await response.json();
+                    console.log("team repo:", result)
+        
+                    // return new Team(result, season);
+        
+                } catch (error) {
+                    // return result;
+                }
+
+            });
             $("<img>").attr("src", "icons/X.png").appendTo($search).addClass("exit-img").on("click", function () {
                 $search.fadeOut("slow");
                 setTimeout(function () {

@@ -258,3 +258,15 @@
 [0129/001535.908:ERROR:process_info.cc(359)] UncheckedAllocate
 [0129/003603.778:ERROR:process_info.cc(359)] UncheckedAllocate
 [0129/003644.596:ERROR:process_info.cc(359)] UncheckedAllocate
+[0131/015325.999:ERROR:process_info.cc(359)] UncheckedAllocate
+[0131/015835.123:ERROR:process_info.cc(359)] UncheckedAllocate
+[0131/015840.706:ERROR:process_info.cc(359)] UncheckedAllocate
+[0131/015842.445:ERROR:process_info.cc(359)] UncheckedAllocate
+[0131/015902.168:ERROR:process_info.cc(359)] UncheckedAllocate
+[0131/015902.906:ERROR:process_info.cc(359)] UncheckedAllocate
+[0201/012525.704:ERROR:process_info.cc(359)] UncheckedAllocate
+[0201/012527.451:ERROR:process_info.cc(359)] UncheckedAllocate
+[0201/225303.117:ERROR:process_info.cc(359)] UncheckedAllocate
+[0201/225308.176:ERROR:process_info.cc(359)] UncheckedAllocate
+[0201/225316.104:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Korisnik\AppData\Local\Google\Chrome\User Data\Crashpad\reports\fff5f45c-7829-4c26-8bf7-e522cc98ac6f.dmp: The process cannot access the file because it is being used by another process. (0x20)
+[0202/223204.262:ERROR:process_info.cc(359)] UncheckedAllocate
