@@ -240,7 +240,7 @@ ul.social li a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     margin: 3px auto;
 }
 .logo-bar{
@@ -256,9 +256,14 @@ ul.social li a{
     height: 100px;   
 }
 
+.menu-wrap{
+    display: flex;
+    width: 60%;
+}
+
 nav{
     display: flex;
-    width: 55%;
+    width: 90%;
 }
 
 nav>ul{
@@ -299,7 +304,7 @@ nav>ul>li>a{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    width: 10%;
     height: 50px;
     padding: 12px;
     margin-left: 20px;
@@ -2067,3 +2072,232 @@ textarea:-ms-input-placeholder { color: #999999; }
     display: flex;
 }
 
+
+
+/* responsive */
+
+@media only screen and (max-width: 1100px){
+    .bottom-bar{
+        width: 100%;
+    }
+
+    .menu-wrap{
+        width: 70%;
+    }
+
+    nav{
+        width: 85%;
+    }
+
+    .front-news{
+        left: 521px !important;
+    }
+
+    .allTeam{
+        width: 100%;
+    }
+
+    .allTeam>div{
+        width: 100%;
+    }
+
+    .coach>div{
+        right: 45px;
+    }
+
+    .login{
+        width: 47%;
+        padding: 0;
+    }
+
+    .log-in-div{
+        width: 80% !important;
+    }
+
+    .item-holder{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    body{
+        overflow-x: hidden !important;
+    }
+
+    .menu-icon{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-icon span{
+        width: 25px;
+        height: 3px;
+        margin: 2px;
+        border-radius: 10%;
+        background: rgba(18, 102, 171);
+        transition: 0.6s;
+    }
+
+    .menu-wrap{
+        width: 10%;
+    }
+
+    nav{
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        top: 60px;
+        right: 6px;
+        width: 60%;
+        z-index: 2;
+        transition: all 1s ease-in-out,
+                    visibility  0s linear 0.2s;
+        background-color: rgba(0, 0, 0, 0.801);
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        width: 98%;
+        padding-left: 5px;
+    }
+
+    nav ul li:first-child{
+        border-top: 3px solid rgba(18, 102, 171);
+    }
+
+    nav ul li{
+        border-radius: 0;
+        margin: 5px;
+        padding: 0;
+    }
+
+    nav ul li a{
+        padding: 10px;
+    }
+
+    .bottom-bar-helper .menu-wrap:hover nav{
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s, 0.2s;
+    }
+
+    ul.social{
+        display: none;
+    }
+
+    .login{
+        width: 90%;
+        padding: 15px;
+    }
+
+    .log-in-div{
+        width: 100% !important;
+    }
+
+    .slick-slide img{
+        width: 120% !important;
+    }
+
+    #slider ul{
+        display: none !important;
+    }
+
+    .popUp-div{
+        display: none !important;
+    }
+
+    .left-cont{
+        display: none !important;
+    }
+
+    .all-news{
+        width: 100% !important;
+    }
+
+    .news-cont{
+        width: 43% !important;
+    }
+
+    .news-cont>button{
+        display: none !important;
+    }
+
+    .allTeam>div>div{
+        background-image: unset !important;
+        height: unset !important;
+        flex-wrap: wrap;
+    }
+
+    .midfielders>div{
+        margin-right: 0 !important;
+    }
+
+    .coach>img{
+        position: relative;
+        height: 467px !important;
+        width: 466px !important;
+    }
+
+    .coach>div {
+        left: 34px;
+        width: 59%;
+        bottom: 15px;
+        color: wheat;
+    }
+
+    .front-news{
+        display: none !important;
+    }
+
+    .search-div{
+        display: none;
+    }
+    
+    .menu-icon:hover span:first-child{
+        transform: rotate(-45deg) translate(-3px, 3px);
+    }
+
+    .menu-icon:hover span:last-child{
+        transform: rotate(45deg) translate(-6px, -8px);
+    }
+
+    .menu-icon:hover span:nth-child(2){
+        opacity: 0;
+    }
+
+    .back-to-top{
+        right: 50px !important;
+    }
+
+    .allSeasons{
+        width: 90% !important;
+    }
+
+    .statistics-div-img{
+        width: 90% !important;
+    }
+
+    .table-stadium{
+        width: 90% !important;
+    }
+
+    .item-holder{
+        grid-template-columns: repeat(3, 1fr) !important;
+        width: 90% !important;
+    }
+
+    .top-bar{
+        width: 96% !important;
+    }
+}
+
+@media only screen and (max-width: 650px){
+
+}
+
+@media only screen and (max-width: 360px){
+
+}
