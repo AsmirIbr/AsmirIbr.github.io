@@ -42,12 +42,12 @@ function StoreRepository() {
     }
 
     this.postItemForCart = (itemId) => {
-        window.cart.push(itemId);     
+        window.cart.push(itemId);
         return window.cart;
     }
 
     this.removeItemForCart = (itemIndex) => {
-      window.cart.splice(itemIndex, 1);
-      return window.cart;
+        window.cart.splice(itemIndex, 1);
+        return window.cart;
     }
 }

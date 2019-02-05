@@ -5,8 +5,7 @@ function PageLogic() {
         this.galleryRepo = new GalleryRepository();
         this.userRepo = new UserRepository();
         this.storeRepo = new StoreRepository();
-
-        var cart = null;
+        this.searchRepo = new SearchRepository();
 
         this.getPageData = async function () {
 
@@ -34,7 +33,10 @@ function PageLogic() {
                 return teamStatistics;
         }
 
-
+        this.getSearchedData = async function (input) {
+                var searchForData = await this.searchRepo.searchedPageData(input);
+                return searchForData;
+        }
 
         this.getGalleryPictures = async function () {
                 var pictures = [];
@@ -108,7 +110,7 @@ function PageLogic() {
                                 if (!fanshopData[index].isCart === true) {
 
                                         fanshopData[index].isCart = true;
-                                        this.storeRepo.postItemForCart(fanshopData[index]);                         
+                                        this.storeRepo.postItemForCart(fanshopData[index]);
                                 }
                         }
                 }
@@ -117,13 +119,13 @@ function PageLogic() {
         }
 
         this.removeCartItem = function (itemId) {
-                
+
                 for (let index = 0; index < window.cart.length; index++) {
 
                         if (window.cart[index].id === itemId) {
 
                                 window.cart[index].isCart = false;
-                                this.storeRepo.removeItemForCart(index);                           
+                                this.storeRepo.removeItemForCart(index);
                         }
                 }
 

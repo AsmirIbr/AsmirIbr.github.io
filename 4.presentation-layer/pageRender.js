@@ -71,29 +71,30 @@ function RenderPage() {
 
 
         //header-search-bar
-        $("#search-button").on("click", function () {
+        $("#search-button").on("click", () => {
 
             var $search = $("<div>").appendTo("#bottom-bar").addClass("search-bar").animate({ width: '100%' }, "slow");
             $("<input>").attr("type", "text").attr("placeholder", "Type to search").appendTo($search).addClass("search-input").delay(500).animate({ width: '80%' }, "slow")
-            .on("keypress", async () => {
-
+            $(".search-input").on("keypress", async (event) => {
             
-                var input1 = $(".search-input").val()
-                var result = null;
-                try {
-                    var url = await fetch('http://en.wikipedia.org/w/api.php?&action=query&list=search&srsearch='+ input1 + 
-                    '+incategory:Men%27s_sport_in_Europe&format=json&srlimit=5&prop=info'); // za statistika
-                    var response = await url;
-                    result = await response.json();
-                    console.log("team repo:", result)
+                    if(this.delayedInput != null){
+                        clearTimeout(this.delayedInput);
+                    }
         
-                    // return new Team(result, season);
+                    this.delayedInput = setTimeout(async () => {
+                        var searchFor =  $(".search-input").val();
+                        this.searchedData = await this.pageData.getSearchedData(searchFor);
         
-                } catch (error) {
-                    // return result;
-                }
-
-            });
+                        var $searchResult = $("<div>").appendTo(".search-bar").addClass("search-result");
+        
+                        for(var i = 0; i < this.searchedData.length; i++){
+            
+                            $("<div>").appendTo($searchResult).addClass("search-result1")
+                            .append($("<h3>").text(this.searchedData[i]));
+                        }
+                    }, 500);
+                });
+     
             $("<img>").attr("src", "icons/X.png").appendTo($search).addClass("exit-img").on("click", function () {
                 $search.fadeOut("slow");
                 setTimeout(function () {

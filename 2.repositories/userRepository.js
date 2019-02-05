@@ -1,9 +1,7 @@
 function UserRepository() {
 
     this.postUser = function (user) {
-
-        // localStorage.removeItem(user.email);
-
+        
         var member = JSON.stringify(user);
 
         localStorage.setItem(user.email, member);
