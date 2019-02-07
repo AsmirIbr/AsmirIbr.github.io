@@ -8,7 +8,7 @@ function TeamRepository() {
        
 
         try {
-            var url = await fetch(`https://api.sportradar.us/soccer-t3/eu/en/tournaments/${id}/teams/sr:competitor:2697/statistics.json?api_key=${key}`); // za statistika
+            var url = await fetch(`https://api.sportradar.us/soccer-t3/eu/en/tournaments/${season}/teams/sr:competitor:2697/statistics.json?api_key=${key}`); // za statistika
             var response = await url;
             result = await response.json();
             // console.log("team repo:", result)
@@ -28,7 +28,7 @@ function TeamRepository() {
        
 
         try {
-            var url = await fetch(`https://api.sportradar.us/soccer-t3/eu/en/tournaments/${id}/standings.json?api_key=${key}`);
+            var url = await fetch(`https://api.sportradar.us/soccer-t3/eu/en/tournaments/${season}/standings.json?api_key=${key}`);
             var response = await url;
             result = await response.json();
 

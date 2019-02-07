@@ -2329,12 +2329,161 @@ textarea:-ms-input-placeholder { color: #999999; }
     .top-bar{
         width: 96% !important;
     }
+
+    .popUp-login{
+        overflow: scroll;
+    }
+
+    
 }
 
 @media only screen and (max-width: 650px){
+    .slider-background {
+        display: none !important;
+    }
 
+    .news-cont {
+        width: 93% !important;
+    }
+
+    .fanshop-img1 {
+        width: 60% !important;
+    }
+
+    .item-holder {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .remove-text {
+        right: -225px !important;
+        top: 24px !important;
+    }
+
+    .maps {
+        position: absolute !important;
+        right: -227px !important;
+        top: 49px !important;
+    }
+
+    .left-arrow-pics {
+        position: absolute !important;
+        left: 20% !important;
+        top: 75% !important;
+    }
+
+    .right-arrow-pics {
+        position: absolute !important;
+        right: 20% !important;
+        top: 75% !important;
+    }
+
+    .remove-popUp-pics {
+        position: absolute !important;
+        right: 5px !important;
+        top: 15px !important;
+    }
+
+    .coach>img {
+        position: relative;
+        height: 410px !important;
+        width: 359px !important;
+    }
+
+    .team-top-div {
+        width: 30% !important;
+        height: 604px !important;
+    }
+
+    .team-top-left {
+        display: none !important;
+    }
+
+    .jersey-div-prime {
+        display: none !important;
+    }
+
+    .player-statistics, .season-statistics, .team-top-right, .team-top-div{
+        width: 100% !important;
+    }
+
+    .team-top-right>h1 {
+        font-size: 40px !important;
+    }
+
+    .image-holder{
+        display: none !important;
+    }
+
+    .login-holder{
+        width: 100% !important;
+    }
+
+    .close-logIn {
+        right: 5% !important;
+        width: 30% !important;
+    }
+
+    .loader>img {
+        right: 45% !important;
+    }
 }
 
-@media only screen and (max-width: 360px){
+@media only screen and (max-width: 500px){
+    .news-img {
+        height: 225px !important;
+    }
+
+    .player {
+        width: 95% !important;
+        height: 420px !important;
+    }
+
+    .player-statistics, .season-statistics{
+        font-size: 13px !important;
+    }
+
+    nav{
+        width: 99% !important;
+    }
+
+    .coach{
+        display: none !important;
+    }
+
+    .season-statistics-second>div:nth-child(5), .season-statistics-second>div:first-child, .season-statistics-second>div:nth-child(2){
+        display: none;
+    }
+
+    .player-stats {
+        width: calc(100% / 4) !important;
+    }
+
+    .item-holder {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    .login>div{
+        font-size: 5px !important;
+        width: 50% !important;
+    }
+
+    .login {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .back-to-top {
+        right: 10px !important;
+    }
+
+    .checkout-button {
+        padding: 0 !important;
+        width: 35% !important;
+    }
+
+    .title-cart div:first-child {
+        width: 37% !important;
+    }
+
 
 }
