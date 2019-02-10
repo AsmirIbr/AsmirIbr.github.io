@@ -27,7 +27,7 @@ function RenderPage() {
 
         // home-header-menu
 
-        $("#home-menu").on("click", (event) => {
+        $("#home-menu, #home-footer").on("click", (event) => {
             event.preventDefault();
 
             $("body").css("overflow-y", "hidden");
@@ -39,7 +39,7 @@ function RenderPage() {
             });
 
             $("nav>ul>li").removeClass("li-active");
-            $(event.target).parent().addClass("li-active");
+            $("#home-menu").parent().addClass("li-active");
 
             $("#page-wrapper").empty();
             $("#home-wrapper").css("display", "block");
@@ -129,7 +129,8 @@ function RenderPage() {
         });
 
         //header-news-menu
-        $("#news-menu").on("click", (event) => {
+
+        $("#news-menu, #news-footer").on("click", (event) => {
             event.preventDefault();
 
             $("body").css("overflow-y", "hidden");
@@ -141,7 +142,8 @@ function RenderPage() {
             });
 
             $("nav>ul>li").removeClass("li-active");
-            $(event.target).parent().addClass("li-active");
+            $("#news-menu").parent().addClass("li-active");
+            
 
             $("#page-wrapper").empty();
             $("#home-wrapper").css("display", "none");
@@ -154,9 +156,10 @@ function RenderPage() {
             }, 2000)
 
         });
+        
 
         //header-team-menu
-        $("#team-menu").on("click", (event) => {
+        $("#team-menu, #team-footer").on("click", (event) => {
             event.preventDefault();
 
             $("body").css("overflow-y", "hidden");
@@ -168,7 +171,7 @@ function RenderPage() {
             });
 
             $("nav>ul>li").removeClass("li-active");
-            $(event.target).parent().addClass("li-active");
+            $("#team-menu").parent().addClass("li-active");
 
             $("#page-wrapper").empty();
             $("#home-wrapper").css("display", "none");
@@ -182,7 +185,7 @@ function RenderPage() {
 
         });
         //header-season-menu
-        $("#season-menu").on("click", (event) => {
+        $("#season-menu, #season-footer").on("click", (event) => {
             event.preventDefault();
 
             $("body").css("overflow-y", "hidden");
@@ -194,7 +197,7 @@ function RenderPage() {
             });
 
             $("nav>ul>li").removeClass("li-active");
-            $(event.target).parent().addClass("li-active");
+            $("#season-menu").parent().addClass("li-active");
 
             $("#page-wrapper").empty();
             $("#home-wrapper").css("display", "none");
@@ -210,7 +213,7 @@ function RenderPage() {
         });
 
         //header-stadium-menu
-        $("#stadium-menu").on("click", (event) => {
+        $("#stadium-menu, #stadium-footer").on("click", (event) => {
             event.preventDefault();
 
             $("body").css("overflow-y", "hidden");
@@ -222,7 +225,7 @@ function RenderPage() {
             });
 
             $("nav>ul>li").removeClass("li-active");
-            $(event.target).parent().addClass("li-active");
+            $("#stadium-menu").parent().addClass("li-active");
 
             $("#page-wrapper").empty();
             $("#home-wrapper").css("display", "none");
@@ -237,7 +240,7 @@ function RenderPage() {
         });
 
         //header-fanshop-menu
-        $("#fanshop-menu").on("click", (event) => {
+        $("#fanshop-menu, #fanshop-footer").on("click", (event) => {
             event.preventDefault();
 
             $("body").css("overflow-y", "hidden");
@@ -249,7 +252,7 @@ function RenderPage() {
             });
 
             $("nav>ul>li").removeClass("li-active");
-            $(event.target).parent().addClass("li-active");
+            $("#fanshop-menu").parent().addClass("li-active");
 
             $("#page-wrapper").empty();
             $("#home-wrapper").css("display", "none");

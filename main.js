@@ -11,13 +11,12 @@ async function main() {
                 infinite: true,
                 centerMode: true,
                 slidesToShow: 3,
-                // autoplay: true,
-                // autoplaySpeed: 1500,
+                autoplay: true,
+                autoplaySpeed: 1500,
             });
 
         });
 	
-    await $(".loader");
     setTimeout(function () {
         $(".loader").addClass("loader-hide");
         $("body").css("overflow-y", "scroll");

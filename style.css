@@ -660,7 +660,7 @@ nav>ul>li>a{
 .coach>img{
     position: absolute;
     left: 28%;
-    bottom: 0;
+    bottom: 120px;
     height: 500px;
     width: 530px;
 }
@@ -668,7 +668,7 @@ nav>ul>li>a{
 .coach>div{
     position: absolute;
     right: 195px;
-    bottom: 320px;
+    bottom: 440px;
     color: rgba(163, 146, 97);
 }
 
@@ -1381,8 +1381,9 @@ td:hover .tooltip-outcome, th:hover .tooltip-outcome{
     position: absolute;
     z-index: 333;
     width: 100%;
-    height: 570px;
+    height: 430%;
     background-color: transparent;
+    overflow: scroll;
 }
 
 .log-in-div{
@@ -2088,17 +2089,49 @@ textarea:-ms-input-placeholder { color: #999999; }
     font-weight: 35px;
 }
 
-/* .search-result1>h5{
-    width: 80%;
-    margin: 0 auto;
-    border-bottom: 1px solid rgba(18, 102, 171);
-    color: #e6e6e6;
-    font-weight: 35px;
-} */
-
 .search-result1:hover{
     color: red;
 }
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
+    background-color: rgba(0, 0, 0);
+    color: wheat;
+    z-index: 9999999;
+}
+
+.produced{
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.navigate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+
+.navigate>div:first-child{
+    margin-bottom: 30px;
+}
+
+.navigate>div:last-child{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    cursor: pointer;
+}
+
+.navigate>div:last-child>div:hover{
+    color: white;
+}
+
 
 
 
@@ -2331,9 +2364,12 @@ textarea:-ms-input-placeholder { color: #999999; }
     }
 
     .popUp-login{
-        overflow: scroll;
+        overflow-y: scroll !important;
     }
 
+    .navigate {
+        width: 40% !important;
+    }
     
 }
 
@@ -2426,6 +2462,18 @@ textarea:-ms-input-placeholder { color: #999999; }
     .loader>img {
         right: 45% !important;
     }
+
+    .mainCont{
+        width: 100% !important;
+    }
+
+    footer {
+        display: none !important;
+    }
+
+    .top-bar-helper {
+        width: 75% !important;
+    }
 }
 
 @media only screen and (max-width: 500px){
@@ -2463,7 +2511,7 @@ textarea:-ms-input-placeholder { color: #999999; }
     }
 
     .login>div{
-        font-size: 5px !important;
+        font-size: 16px !important;
         width: 50% !important;
     }
 
