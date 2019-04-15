@@ -3,7 +3,6 @@ function TeamRepository() {
     this.getTeamStatistics = async function (season) {
         var result = null;
        
-
         try {
             var url = await fetch(`https://18.217.224.98:3000/teamstats/${season}`); // za statistika
             var response = await url;
