@@ -2,13 +2,10 @@ function TeamRepository() {
 
     this.getTeamStatistics = async function (season) {
         var result = null;
-
-        var key ="97c4jrzgb9p2m3mqgj9sjcp5";
-        // var key = "h5a88tvkth6ed5ms35davy6e";
        
 
         try {
-            var url = await fetch(`https://api.sportradar.us/soccer-t3/eu/en/tournaments/${season}/teams/sr:competitor:2697/statistics.json?api_key=${key}`); // za statistika
+            var url = await fetch(`http://18.217.224.98:3000/teamstats/${season}`); // za statistika
             var response = await url;
             result = await response.json();
             // console.log("team repo:", result)
@@ -23,12 +20,10 @@ function TeamRepository() {
     this.getTable = async function (season) {
         var result = null;
 
-        var key ="97c4jrzgb9p2m3mqgj9sjcp5";
-        // var key = "h5a88tvkth6ed5ms35davy6e";
        
 
         try {
-            var url = await fetch(`https://api.sportradar.us/soccer-t3/eu/en/tournaments/${season}/standings.json?api_key=${key}`);
+            var url = await fetch(`http://18.217.224.98:3000/table/${season}`);
             var response = await url;
             result = await response.json();
 
