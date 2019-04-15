@@ -19,6 +19,7 @@ function TeamRepository() {
     this.getTable = async function (season) {
         var result = null;
 
+        
         $.ajax({
             method: 'GET',
             crossDomain:true,
