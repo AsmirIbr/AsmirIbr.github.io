@@ -7,7 +7,7 @@ function TeamRepository() {
             method: 'GET',
             crossDomain:true,
             url: `http://18.217.224.98:3000/teamstats/${season}`,
-            data: 'xml',
+            data: JSON.stringify(),
         }).then(async(success) => {
             result = await success.json();
         },function(error){
@@ -35,12 +35,11 @@ function TeamRepository() {
             method: 'GET',
             crossDomain:true,
             url: `http://18.217.224.98:3000/table/${season}`,
-            data: 'xml',
+            data: JSON.stringify(),
 
         }).then(async(success) => {
-            console.log(result, success)
             result = await success.json();
-            
+            console.log(result, success)
         },function(error){
             console.log(error)
             // responseText.innerHTML = 'Не постои уред со таков сериски број, обидете се повторно';
