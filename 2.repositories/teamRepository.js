@@ -19,20 +19,29 @@ function TeamRepository() {
     this.getTable = async function (season) {
         var result = null;
 
-       
+        $.ajax({
+            method: 'GET',
+            crossDomain:true,
+            url: 'http://18.217.210.193:3000/product/' + inputValue,
+            data: JSON.stringify(),
+        }).then(async(success) => {
+            result = await success.json();
+        },function(error){
+            // responseText.innerHTML = 'Не постои уред со таков сериски број, обидете се повторно';
+        });
 
-        try {
-            var url = await fetch(`http://18.217.224.98:3000/table/${season}`);
-            var response = await url;
-            result = await response.json();
+        // try {
+        //     var url = await fetch(`http://18.217.224.98:3000/table/${season}`);
+        //     var response = await url;
+        //     result = await response.json();
 
-            // console.log("team repo:", result.season.name)
+        //     // console.log("team repo:", result.season.name)
 
-            return new Table(result);
+        //     return new Table(result);
 
-        } catch (error) {
-            return result;
-        }
+        // } catch (error) {
+        //     return result;
+        // }
     }
 }
 
