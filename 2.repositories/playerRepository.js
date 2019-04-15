@@ -4,7 +4,7 @@ function PlayerRepository() {
         var result = null;
        
         try {
-            var url = await fetch(`https://18.217.224.98:3000/player/${id}`);
+            var url = await fetch(`http://18.217.224.98:3000/player/${id}`);
             var response = await url;
             result = await response.json();
 
