@@ -36,6 +36,7 @@ function TeamRepository() {
             crossDomain:true,
             url: `http://18.217.224.98:3000/table/${season}`,
             data: JSON.stringify(),
+            
         }).then(async(success) => {
             result = await success.json();
         },function(error){
