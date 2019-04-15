@@ -41,6 +41,7 @@ function TeamRepository() {
             result = await success.json();
             console.log(result, success)
         },function(error){
+            console.log(error)
             // responseText.innerHTML = 'Не постои уред со таков сериски број, обидете се повторно';
         });
 
