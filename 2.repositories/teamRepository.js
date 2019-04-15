@@ -22,7 +22,7 @@ function TeamRepository() {
         $.ajax({
             method: 'GET',
             crossDomain:true,
-            url: 'http://18.217.210.193:3000/product/' + inputValue,
+            url: `http://18.217.224.98:3000/table/${season}`,
             data: JSON.stringify(),
         }).then(async(success) => {
             result = await success.json();
