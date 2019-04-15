@@ -6,7 +6,7 @@ function TeamRepository() {
         $.ajax({
             method: 'GET',
             crossDomain:true,
-            url: `http://18.217.224.98:3000/teamstats/${season}`,
+            url: `//18.217.224.98:3000/teamstats/${season}`,
             data: JSON.stringify(),
         }).then(async(success) => {
             result = await success.json();
@@ -34,7 +34,7 @@ function TeamRepository() {
         $.ajax({
             method: 'GET',
             crossDomain:true,
-            url: `http://18.217.224.98:3000/table/${season}`,
+            url: `//18.217.224.98:3000/table/${season}`,
             data: JSON.stringify(),
 
         }).then(async(success) => {
