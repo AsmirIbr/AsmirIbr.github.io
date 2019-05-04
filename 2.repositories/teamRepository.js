@@ -24,6 +24,10 @@ function TeamRepository() {
             crossDomain:true,
             url: `https://interfanpage.herokuapp.com/season/${season}`,
             data: JSON.stringify(),
+            headers: {
+                "accept": "application/json",
+                "Access-Control-Allow-Origin":"*"
+            }
         }).then(function(success){
             console.log(success)
            return new Table(success);
